@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/sixersun/slmodbus/issues"
   },
-  "homepage": "https://github.com/sixersun/slmodbus#readme"
+  "homepage": "https://github.com/sixersun/slmodbus#readme",
+  "directories": {
+    "lib": "lib"
+  }
 }

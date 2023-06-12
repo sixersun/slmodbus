@@ -1,5 +1,5 @@
-const tcp = require('./tcp')
-const map = require('./map')
+const tcp = require('./lib/tcp')
+const map = require('./lib/map')
 class slmodbus{
     constructor(args){
         this.host=args.host || "127.0.0.1",
@@ -27,8 +27,8 @@ class slmodbus{
         fan_status.x7 = r[9]&0x80;
         fan_status.x10 = r[10]&0x01;
         if(fan_status.x10>0) return -1;
-        if(fan_status.x2==0||fan_status.x3==0) return 0
-        return 1
+        if(fan_status.x2>0||fan_status.x3>0) return 1
+        return 0
     }
     //判断风机是否允许再次发送命令
     async readFanM() {
